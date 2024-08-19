@@ -41,6 +41,9 @@ class PasienController extends Controller
     public function destroy(Pasien $pasien)
     {
         $pasien->delete();
-        return response()->noContent();
+        return response()->json([
+            'message' => 'Obat berhasil dihapus',
+            'status' => 'success'
+        ]);
     }
 }
